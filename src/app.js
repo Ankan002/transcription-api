@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import fileUpload from "express-fileupload";
+import { transcribeRouter } from "./router/transcribe-router.js";
 
 export const startServer = () => {
     const app = express();
@@ -13,8 +14,8 @@ export const startServer = () => {
         fileUpload({
             useTempFiles: true,
             limits: {
-                fileSize: 10 * 1024 * 1024
-            }
+                fileSize: 12 * 1024 * 1024,
+            },
         })
     );
 
@@ -24,6 +25,8 @@ export const startServer = () => {
             message: "Hello from transcription API!!",
         });
     });
+
+    app.use("/api/transcribe", transcribeRouter);
 
     app.listen(PORT, () => console.log("App is running!!"));
 };

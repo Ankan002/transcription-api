@@ -174,13 +174,6 @@ call-bind@^1.0.0:
     function-bind "^1.1.1"
     get-intrinsic "^1.0.2"
 
-chiaki@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/chiaki/-/chiaki-2.0.0.tgz#2fa2b4f3d1ff9ba87ee3860128053d62245afc1e"
-  integrity sha512-XCLb713fLcGC4hFG+3Fn9n80jws7vJsaF0TEOBp59OvtCRK7S+0UF4+DCvcSvs51M/dj2IHzn0667jd5MPb5oQ==
-  dependencies:
-    unstreamify "^2.0.0"
-
 chokidar@^3.5.2:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.3.tgz#1cf37c8707b932bd1af1ae22c0432e2acd1903bd"
@@ -525,13 +518,6 @@ negotiator@0.6.3:
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.3.tgz#58e323a72fedc0d6f9cd4d31fe49f51479590ccd"
   integrity sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==
 
-node-replicate@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/node-replicate/-/node-replicate-2.0.0.tgz#227eccabdc52fd7e02a5d35d194f76700de75c44"
-  integrity sha512-vJ8wDLpDh+zEznpTgRdO52+JG5g/mEaon0y9DTkvfMwZ16XjuxnCUGpfS9P8Oea3VXH1+bZJ++a/NzjPhN6QaA==
-  dependencies:
-    chiaki "^2.0.0"
-
 nodemon@^2.0.22:
   version "2.0.22"
   resolved "https://registry.yarnpkg.com/nodemon/-/nodemon-2.0.22.tgz#182c45c3a78da486f673d6c1702e00728daf5258"
@@ -645,6 +631,11 @@ readdirp@~3.6.0:
   integrity sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==
   dependencies:
     picomatch "^2.2.1"
+
+replicate@^0.12.3:
+  version "0.12.3"
+  resolved "https://registry.yarnpkg.com/replicate/-/replicate-0.12.3.tgz#f5f1559b0bf0381c224a86b89e1d32f4a28b5fb7"
+  integrity sha512-HVWKPoVhWVTONlWk+lUXmq9Vy2J8MxBJMtDBQq3dA5uq71ZzKTh0xvJfvzW4+VLBjhBeL7tkdua6hZJmKfzAPQ==
 
 safe-buffer@5.1.2:
   version "5.1.2"
@@ -774,11 +765,6 @@ unpipe@1.0.0, unpipe@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/unpipe/-/unpipe-1.0.0.tgz#b2bf4ee8514aae6165b4817829d21b2ef49904ec"
   integrity sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ==
-
-unstreamify@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/unstreamify/-/unstreamify-2.0.0.tgz#fad10842cde15a386fa5b590fb465c622ede7ba8"
-  integrity sha512-u4UWtoJglG5dlinKPrr0cdGOL9eGozILn1EmzQ0oforHVM+M/WB8ibwwlEQlbTYMDMIJe6TK/sbVN5WS7ePOxA==
 
 utils-merge@1.0.1:
   version "1.0.1"
