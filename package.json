@@ -1,0 +1,9 @@
+{
+  "name": "transcription-api",
+  "version": "0.0.1",
+  "description": "Audio Transcription API",
+  "main": "src/index.js",
+  "repository": "https://github.com/Ankan002/transcription-api.git",
+  "author": "Ankan <ankanbhattacharya89@gmail.com>",
+  "license": "MIT"
+}
