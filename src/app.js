@@ -12,7 +12,6 @@ export const startServer = () => {
     app.use(express.json());
     app.use(
         fileUpload({
-            useTempFiles: true,
             limits: {
                 fileSize: 12 * 1024 * 1024,
             },

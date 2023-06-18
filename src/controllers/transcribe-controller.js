@@ -1,5 +1,29 @@
 import { getReplicateInstance } from "../utils/get-replicate-instance.js";
 import fs from "node:fs/promises";
+import nodeFs from "node:fs";
+import path from "node:path";
+import crypto from "node:crypto";
+
+const replaceFile = (audioFile) => {
+    const uuid = crypto.randomUUID();
+
+    const replacePromise = new Promise((resolve, reject) => {
+        if (!nodeFs.existsSync(path.join(process.cwd(), "/tmp"))) {
+            console.log("here!!");
+            nodeFs.mkdirSync(path.join(process.cwd(), "/tmp"));
+        }
+
+        audioFile.mv(path.join(process.cwd(), `/tmp/${uuid}`), (err) => {
+            if (err) {
+                reject(err);
+            }
+
+            resolve(uuid);
+        });
+    });
+
+    return replacePromise;
+};
 
 /**
  *
@@ -24,6 +48,8 @@ export const transcribeAudio = async (req, res) => {
     }
 
     try {
+        const newFileName = await replaceFile(audioFile);
+
         const replicate = getReplicateInstance();
 
         const model =
@@ -38,12 +64,22 @@ export const transcribeAudio = async (req, res) => {
             input: modelInputData,
         });
 
-        await fs.unlink(audioFile["tempFilePath"]);
+        let jsonResult;
+
+        if(result){
+            const response = await fetch(`${result}`, {
+                method: "GET",
+            });
+
+            jsonResult = await response.json();
+        }
+
+        await fs.unlink(path.join(process.cwd(), `/tmp/${newFileName}`));
 
         return res.status(200).json({
             success: true,
             data: {
-                result,
+                result: jsonResult,
             },
         });
     } catch (error) {
